@@ -35,7 +35,14 @@ public class BasicEnemy : MonoBehaviour
     {
         if (collision.tag == "Player")
             SceneManager.LoadScene("SampleScene");
-    } 
+    }
+
+    public void SetSpeed(float speedI)
+    {
+        speed = speedI;
+    }
+
+    
 
     private void OnDrawGizmos()
     {
