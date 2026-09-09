@@ -5,6 +5,7 @@ public class OrpheusMusic : MonoBehaviour
 {
     Collider2D[] hitColliders;
     public float radius = 1f;
+    public bool musicCooldown = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -14,7 +15,7 @@ public class OrpheusMusic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && musicCooldown != true)
         {
             StartCoroutine(RunFunctionForFiveSeconds());
         }
