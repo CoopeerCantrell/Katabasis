@@ -8,6 +8,7 @@ public class BasicEnemy : MonoBehaviour
     private Rigidbody2D rd;
     private Transform currentPoint;
     public float speed;
+    public GameObject deathPanel;
     void Start()
     {
         rd = GetComponent<Rigidbody2D>();
@@ -34,7 +35,7 @@ public class BasicEnemy : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
-            SceneManager.LoadScene("SampleScene");
+            deathPanel.SetActive(true);
     }
 
     public void SetSpeed(float speedI)
