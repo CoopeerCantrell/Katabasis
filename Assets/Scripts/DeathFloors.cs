@@ -19,6 +19,7 @@ public class DeathFloors : MonoBehaviour
     {
         if (collision.CompareTag("Player")){
             deathPanel.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
 }

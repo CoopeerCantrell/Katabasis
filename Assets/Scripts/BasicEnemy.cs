@@ -35,7 +35,10 @@ public class BasicEnemy : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "Player")
+        {
             deathPanel.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 
     public void SetSpeed(float speedI)
