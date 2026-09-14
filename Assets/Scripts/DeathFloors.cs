@@ -18,8 +18,8 @@ public class DeathFloors : MonoBehaviour
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")){
-            deathPanel.SetActive(true);
-            Time.timeScale = 0f;
+            GameObject player = collision.gameObject;
+            player.GetComponent<PlayerMovement>().lifeAmount--;
         }
     }
 }

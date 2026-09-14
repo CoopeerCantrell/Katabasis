@@ -6,6 +6,7 @@ public class OrpheusMusic : MonoBehaviour
     Collider2D[] hitColliders;
     public float radius = 1f;
     public bool musicCooldown = false;
+    public GameObject musicAura;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -63,16 +64,18 @@ public class OrpheusMusic : MonoBehaviour
         float elapsedTime = 0f;
         float duration = 5f;
 
+        musicAura.SetActive(true);
         while (elapsedTime < duration)
         {
             ResetSpeed();
             PlayMusic();
-            
-            elapsedTime += Time.deltaTime; 
-            yield return null; 
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
         }
         
         ResetSpeed();
+        musicAura.SetActive(false);
         Debug.Log("5 seconds are up! Stopped calling the function.");
     }
 }

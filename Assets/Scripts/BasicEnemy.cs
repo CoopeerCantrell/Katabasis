@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +9,7 @@ public class BasicEnemy : MonoBehaviour
     private Rigidbody2D rd;
     private Transform currentPoint;
     public float speed;
-    public GameObject deathPanel;
+    
     void Start()
     {
         rd = GetComponent<Rigidbody2D>();
@@ -36,8 +37,8 @@ public class BasicEnemy : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            deathPanel.SetActive(true);
-            Time.timeScale = 0f;
+            GameObject player = collision.gameObject;
+            player.GetComponent<PlayerMovement>().lifeAmount--;
         }
     }
 

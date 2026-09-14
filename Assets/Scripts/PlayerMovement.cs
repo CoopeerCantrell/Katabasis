@@ -6,9 +6,12 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody2D body;
     public float speed = 5f;
     Vector2 movement;
+    public int lifeAmount = 1;
+    public GameObject deathPanel;
     void Awake()
     {
         body = GetComponent<Rigidbody2D>();
+        Time.timeScale = 1f;
     }
 
     // Update is called once per frame
@@ -17,5 +20,11 @@ public class PlayerMovement : MonoBehaviour
         movement.x = Input.GetAxisRaw("Horizontal");
 
         body.linearVelocity = new Vector2(movement.x * speed, body.linearVelocity.y);
+
+        if (lifeAmount == 0)
+        {
+            deathPanel.SetActive(true);
+            Time.timeScale = 0f;
+        }
     }
 }
