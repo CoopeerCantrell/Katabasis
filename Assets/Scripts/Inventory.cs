@@ -2,7 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.InputSystem;
 using Unity.VisualScripting;
-using Microsoft.Unity.VisualStudio.Editor;
+
 using UnityEngine.UI;
 using Image = UnityEngine.UI.Image;
 using TMPro;
