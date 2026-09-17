@@ -19,7 +19,15 @@ public class DeathFloors : MonoBehaviour
     {
         if (collision.CompareTag("Player")){
             GameObject player = collision.gameObject;
-            player.GetComponent<PlayerMovement>().lifeAmount--;
+            if (player.GetComponent<PlayerMovement>().cantBeHit == false && player.GetComponent<PlayerMovement>().lifeAmount >= 2)
+            {
+                player.GetComponent<PlayerMovement>().lifeAmount--;
+                player.GetComponent<PlayerMovement>().CallDamageTick();
+            }
+            else if (player.GetComponent<PlayerMovement>().cantBeHit == false)
+            {
+                player.GetComponent<PlayerMovement>().lifeAmount--;
+            }
         }
     }
 }

@@ -1,7 +1,9 @@
+using System.Collections;
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    public bool cantBeHit = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private Rigidbody2D body;
     public float speed = 5f;
@@ -26,5 +28,27 @@ public class PlayerMovement : MonoBehaviour
             deathPanel.SetActive(true);
             Time.timeScale = 0f;
         }
+    }
+
+    public void CallDamageTick()
+    {
+        StartCoroutine(DamageTick());
+    }
+
+    IEnumerator DamageTick()
+    {
+        float elapsedTime = 0f;
+        float duration = 1f;
+
+        while (elapsedTime < duration)
+        {
+            cantBeHit = true;
+
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+
+        cantBeHit = false;
+        Debug.Log("can be damaged again");
     }
 }

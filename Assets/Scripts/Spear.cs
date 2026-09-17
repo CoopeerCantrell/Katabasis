@@ -20,7 +20,8 @@ public class Spear : MonoBehaviour
     {
         if (collision.tag == "Enemy")
         {
-            Destroy(collision);
+            Debug.Log("should destroy enemy");
+            Destroy(collision.gameObject);
         }
         else if (collision.tag == "Floor")
         {
