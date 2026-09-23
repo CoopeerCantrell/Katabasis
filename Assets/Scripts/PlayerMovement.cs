@@ -38,7 +38,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator DamageTick()
     {
         float elapsedTime = 0f;
-        float duration = 1f;
+        float duration = 3f;
 
         while (elapsedTime < duration)
         {
