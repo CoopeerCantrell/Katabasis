@@ -30,6 +30,11 @@ public class CommendPattern : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Space))
             Undo();
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            ScoreManager.instance.AddScore(23f);
+        }
     }
 
     public void Undo()
