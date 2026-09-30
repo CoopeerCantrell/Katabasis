@@ -7,6 +7,9 @@ public class PlayerMovement : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private Rigidbody2D body;
     public float speed = 5f;
+    public float speedModifier = 0f;
+    public float fallSpeed = 16f;
+    public float fallSpeedModifier=0f;
     Vector2 movement;
     public int lifeAmount = 1;
     public GameObject deathPanel;
@@ -21,7 +24,15 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
 
-        body.linearVelocity = new Vector2(movement.x * speed, body.linearVelocity.y);
+        body.linearVelocity = new Vector2(movement.x * (speed + speedModifier), body.linearVelocity.y);
+
+        if (body.linearVelocity.y < -(fallSpeed + fallSpeedModifier))
+        {
+            body.linearVelocity = new Vector3(
+                body.linearVelocity.x,
+                -(fallSpeed + fallSpeedModifier)
+            );
+        }
 
         if (lifeAmount == 0)
         {

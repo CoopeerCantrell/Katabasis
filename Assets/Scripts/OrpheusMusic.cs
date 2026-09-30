@@ -5,8 +5,10 @@ public class OrpheusMusic : MonoBehaviour
 {
     Collider2D[] hitColliders;
     public float radius = 1f;
+    public  float radiusModifier = 1f;
     public bool musicCooldown = false;
     public GameObject musicAura;
+    public bool radIncreased = false;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -20,10 +22,15 @@ public class OrpheusMusic : MonoBehaviour
         {
             StartCoroutine(RunFunctionForFiveSeconds());
         }
+        if (radIncreased)
+        {
+            musicAura.transform.localScale += Vector3.one * radiusModifier;
+            radIncreased = false;
+        }
     }
     void PlayMusic(){
     
-    hitColliders = Physics2D.OverlapCircleAll(transform.position,radius);
+    hitColliders = Physics2D.OverlapCircleAll(transform.position,(radius + radiusModifier));
         foreach (var hitCollider in hitColliders) 
     {
             if (hitCollider.CompareTag("Enemy"))
@@ -44,7 +51,7 @@ public class OrpheusMusic : MonoBehaviour
     }
 
     void ResetSpeed(){
-        hitColliders = Physics2D.OverlapCircleAll(transform.position,radius + 2);
+        hitColliders = Physics2D.OverlapCircleAll(transform.position,(radius + radiusModifier) + 2);
         foreach (var hitCollider in hitColliders) 
     {
             if (hitCollider.CompareTag("Enemy"))
@@ -64,6 +71,7 @@ public class OrpheusMusic : MonoBehaviour
         float elapsedTime = 0f;
         float duration = 5f;
 
+        
         musicAura.SetActive(true);
         while (elapsedTime < duration)
         {
