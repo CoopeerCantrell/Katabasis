@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class NextSection : MonoBehaviour
 {
-    public List<ModifierObject> mods;
-    public List<ModifierObject> copiedMods;
+    public SceneTransistion scene;
+    public GameObject ModPaanels;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,16 +16,13 @@ public class NextSection : MonoBehaviour
     {
 
     }
-    private void Shuffle(List<ModifierObject> strings, List<ModifierObject> tempwords)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        List<ModifierObject> temp = new List<ModifierObject>();
-        temp.AddRange(strings);
-
-        for (int i = 0; i < strings.Count; i++)
+        if (collision.CompareTag("Player"))
         {
-            int index = Random.Range(0, temp.Count - 1);
-            tempwords.Add(temp[index]);
-            temp.RemoveAt(index);
+            ModPaanels.SetActive(true);
+            Time.timeScale = 0f;
         }
     }
+    
 }
