@@ -15,7 +15,7 @@ public class Dialogue : MonoBehaviour
     public float textSpeed;
 
     private int index;
-    public GameObject typingUI;
+
 
 
     //public PlayerController pc;
@@ -24,9 +24,11 @@ public class Dialogue : MonoBehaviour
     public UnityEvent EndDialogueEvent;
 
     public string[] dialogText;
-    
-    
-    
+    public AddItem addItem;
+    public ItemSO Achillies;
+    public ItemSO Odysseus;
+    public FavorEntrance favorEntrance;
+
 
     //public NPC npc;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -36,7 +38,6 @@ public class Dialogue : MonoBehaviour
         {
             EndDialogueEvent = new UnityEvent();
         }
-        typingUI = FindInactiveObject("TypingUI");
     }
 
     GameObject FindInactiveObject(string name)
@@ -68,9 +69,9 @@ public class Dialogue : MonoBehaviour
 
     public void startDialogue()
     {
-        
+
         Debug.Log("Start Text");
-       
+
         foreach (DialogSegment node in lines.nodes)
         {
             if (!node.GetInputPort("input").IsConnected)
@@ -84,7 +85,7 @@ public class Dialogue : MonoBehaviour
 
         TextBoxManager.Instance.textComponent.text = string.Empty;
         index = 0;
-        
+
 
         StartCoroutine(TypeLine());
     }
@@ -169,6 +170,87 @@ public class Dialogue : MonoBehaviour
             }
 
         }
+        else if (activeSegment is FavorSegment)
+        {
+            if ((activeSegment as FavorSegment).Achilles)
+            {
+                AddItemToInvo(Achillies);
+
+                if (activeSegment.GetPort("output").IsConnected)
+                {
+                    UpdateDialog(activeSegment.GetPort("output").Connection.node as DialogSegment);
+                    TextBoxManager.Instance.textComponent.text = string.Empty;
+                    StartCoroutine(TypeLine());
+                }
+                else
+                {
+                    Debug.Log("no output detected");
+                    EndDialogue();
+                }
+            }
+            else if ((activeSegment as FavorSegment).Odysseus)
+            {
+                AddItemToInvo(Odysseus);
+
+                if (activeSegment.GetPort("output").IsConnected)
+                {
+                    UpdateDialog(activeSegment.GetPort("output").Connection.node as DialogSegment);
+                    TextBoxManager.Instance.textComponent.text = string.Empty;
+                    StartCoroutine(TypeLine());
+                }
+                else
+                {
+                    Debug.Log("no output detected");
+                    EndDialogue();
+                }
+            }
+            else if ((activeSegment as FavorSegment).Heracles)
+            {
+
+
+                if (activeSegment.GetPort("output").IsConnected)
+                {
+                    UpdateDialog(activeSegment.GetPort("output").Connection.node as DialogSegment);
+                    TextBoxManager.Instance.textComponent.text = string.Empty;
+                    StartCoroutine(TypeLine());
+                }
+                else
+                {
+                    Debug.Log("no output detected");
+                    EndDialogue();
+                }
+            }
+            else if ((activeSegment as FavorSegment).Theseus)
+            {
+
+
+                if (activeSegment.GetPort("output").IsConnected)
+                {
+                    UpdateDialog(activeSegment.GetPort("output").Connection.node as DialogSegment);
+                    TextBoxManager.Instance.textComponent.text = string.Empty;
+                    StartCoroutine(TypeLine());
+                }
+                else
+                {
+                    Debug.Log("no output detected");
+                    EndDialogue();
+                }
+            }
+            else
+            {
+                if (activeSegment.GetPort("output").IsConnected)
+                {
+                    UpdateDialog(activeSegment.GetPort("output").Connection.node as DialogSegment);
+                    TextBoxManager.Instance.textComponent.text = string.Empty;
+                    StartCoroutine(TypeLine());
+                }
+                else
+                {
+                    Debug.Log("no output detected");
+                    EndDialogue();
+                }
+            }
+        }
         else
         {
             if (activeSegment.GetPort("output").IsConnected)
@@ -212,9 +294,9 @@ public class Dialogue : MonoBehaviour
         TextBoxManager.Instance.nameTextObj.SetActive(false);
         TextBoxManager.Instance.Objportrait.SetActive(false);
         TextBoxManager.Instance.textComponent.text = string.Empty;
-        TextBoxManager.Instance.DialogPanel.SetActive(false);
+        favorEntrance.LeaveFavor();
         TextBoxManager.Instance.NoTalk = false;
-        
+
         EndDialogueEvent.Invoke();
     }
 
@@ -234,6 +316,14 @@ public class Dialogue : MonoBehaviour
     public void SetDialogGraph(DialogGraph graph)
     {
         lines = graph;
+    }
+
+    public void AddItemToInvo(ItemSO item)
+    {
+        Debug.Log(item);
+        Inventory.instance.ConsumeEquippedItem();
+        addItem.UseAddItem(item);
+        Inventory.instance.EquipHandItem();
     }
     
 }

@@ -72,57 +72,6 @@ public class DialogInteraction : MonoBehaviour
         
     }
 
-    void OnTriggerEnter2D(Collider2D other)
-    {
-
-
-
-        if (other.gameObject.CompareTag("Player")&& text.textActive == false )
-        {
-            InRange = true;
-        }
-        
-        if (other.gameObject.CompareTag("Player") && scriptedText == true)
-        {
-            TextBoxManager.Instance.DiologueBox.SetActive(true);
-             
-             TextBoxManager.Instance.skip.SetActive(true);
-            TextBoxManager.Instance.nameTextObj.SetActive(true);
-            text.startDialogue();
-        }
-
-
-        if (other.gameObject.CompareTag("Player")&& pauseGame == true && once == false){
-             TextBoxManager.Instance.DiologueBox.SetActive(true);
-           
-            text.startDialogue();
-            Debug.Log("InText");
-            Time.timeScale = 0.0f;
-             
-            once = true;
-
-        }
-
-        if(other.gameObject.CompareTag("Player")&& notAgain == true && once == false)
-        {
-            TextBoxManager.Instance.DiologueBox.SetActive(true);
-            text.startDialogue();
-            Debug.Log("InText");
-            
-            once = true;
-        }
-
-        if(other.gameObject.CompareTag("Player")&& notAgain == true && once == false &&  notAgain == false)
-        {
-            TextBoxManager.Instance.DiologueBox.SetActive(true);
-            text.startDialogue();
-            Debug.Log("InText");
-            
-            once = true;
-        }
-
-       
-    }
 
     void OnTriggerExit2D(Collider2D other)
     {

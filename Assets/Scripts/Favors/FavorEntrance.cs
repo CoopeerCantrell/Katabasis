@@ -4,6 +4,7 @@ public class FavorEntrance : MonoBehaviour
 {
     public GameObject favorUi;
     public bool inFavor = false;
+    public DialogInteraction dialogInteraction;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -19,6 +20,7 @@ public class FavorEntrance : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
+            dialogInteraction.StartDiologue();
             favorUi.SetActive(true);
             Time.timeScale = 0f;
             inFavor = true;
