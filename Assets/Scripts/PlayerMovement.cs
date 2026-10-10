@@ -18,6 +18,25 @@ public class PlayerMovement : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         Time.timeScale = 1f;
     }
+    void Start()
+    {
+        deathPanel = FindInactiveObject("DeathPanel");
+    }
+
+    GameObject FindInactiveObject(string name)
+    {
+        GameObject[] objects = Resources.FindObjectsOfTypeAll<GameObject>();
+
+        foreach (GameObject obj in objects)
+        {
+            if (obj.name == name && obj.scene.IsValid())
+            {
+                return obj;
+            }
+        }
+
+        return null;
+    }
 
     // Update is called once per frame
     void Update()
