@@ -38,6 +38,7 @@ public class Dialogue : MonoBehaviour
         {
             EndDialogueEvent = new UnityEvent();
         }
+        addItem = FindInactiveObject("FavorUI").GetComponent<AddItem>();
     }
 
     GameObject FindInactiveObject(string name)
@@ -67,10 +68,11 @@ public class Dialogue : MonoBehaviour
 
     }
 
-    public void startDialogue()
+    public void startDialogue(FavorEntrance favor)
     {
 
         Debug.Log("Start Text");
+        favorEntrance = favor;
 
         foreach (DialogSegment node in lines.nodes)
         {

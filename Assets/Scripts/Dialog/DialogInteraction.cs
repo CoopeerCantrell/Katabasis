@@ -21,7 +21,7 @@ public class DialogInteraction : MonoBehaviour
     public bool scriptedText;
 
     public bool canTalk = true;
-
+    public FavorEntrance favorEntrance;
     
 
     
@@ -58,7 +58,7 @@ public class DialogInteraction : MonoBehaviour
                     TextBoxManager.Instance.skip.SetActive(true);
                     TextBoxManager.Instance.nameTextObj.SetActive(true);
                     
-                    text.startDialogue();
+                    text.startDialogue(favorEntrance);
                     
 
                 }
@@ -81,7 +81,7 @@ public class DialogInteraction : MonoBehaviour
         }
     }
 
-    public void StartDiologue()
+    public void StartDiologue(FavorEntrance favor)
     {
         if(TextBoxManager.Instance.NoTalk == false)
         {
@@ -91,8 +91,8 @@ public class DialogInteraction : MonoBehaviour
             TextBoxManager.Instance.skip.SetActive(true);
             TextBoxManager.Instance.nameTextObj.SetActive(true);
             TextBoxManager.Instance.DialogPanel.SetActive(true);
-            
-            text.startDialogue();
+            favorEntrance = favor;
+            text.startDialogue(favor);
         }
     }
 }

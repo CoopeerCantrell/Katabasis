@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - Floor
   - DeathPanel
+  - ModPanel
+  - FavorUI
+  - Inventory
   layers:
   - Default
   - TransparentFX

@@ -933,8 +933,8 @@ GameObject:
   - component: {fileID: 1508286055811942716}
   - component: {fileID: 7962882884123873195}
   m_Layer: 5
-  m_Name: ModifierChoice
-  m_TagString: Untagged
+  m_Name: ModPanel
+  m_TagString: ModPanel
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3518,7 +3518,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5031071622217397174}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: FavorEntrance, Assembly-CSharp
         m_MethodName: LeaveFavor
         m_Mode: 1
@@ -3544,11 +3544,10 @@ GameObject:
   - component: {fileID: 5683507894584688985}
   - component: {fileID: 7110640024864458138}
   - component: {fileID: 8526484337674382414}
-  - component: {fileID: 5031071622217397174}
   - component: {fileID: 6752761806404778189}
   m_Layer: 5
   m_Name: Canvas
-  m_TagString: Untagged
+  m_TagString: Inventory
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3740,20 +3739,6 @@ MonoBehaviour:
   normalOpacity: 0.58
   camTransform: {fileID: 0}
   hand: {fileID: 0}
---- !u!114 &5031071622217397174
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5992937117009815720}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccbd73df9c8c44f4f94af786a85fc8a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::FavorEntrance
-  favorUi: {fileID: 6325273536713853453}
-  inFavor: 0
 --- !u!114 &6752761806404778189
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4624,12 +4609,12 @@ GameObject:
   - component: {fileID: 5651201628233267161}
   - component: {fileID: 2522417415041369553}
   m_Layer: 5
-  m_Name: FavorPanel
-  m_TagString: Untagged
+  m_Name: FavorUI
+  m_TagString: FavorUI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3654082150657563591
 RectTransform:
   m_ObjectHideFlags: 0

@@ -30,6 +30,7 @@ public class Modifier : MonoBehaviour
     {
         player = GameObject.FindWithTag("Player").GetComponent<PlayerMovement>();
         playermusic = GameObject.FindWithTag("Player").GetComponent<OrpheusMusic>();
+        scene = GameObject.FindGameObjectWithTag("Inventory").GetComponent<SceneTransistion>();
         PopMods();
         PopMods();
 

@@ -8,7 +8,22 @@ public class NextSection : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        ModPaanels = FindInactiveObject("ModPanel");
+        scene = GameObject.FindGameObjectWithTag("Inventory").GetComponent<SceneTransistion>();
+    }
+    GameObject FindInactiveObject(string name)
+    {
+        GameObject[] objects = Resources.FindObjectsOfTypeAll<GameObject>();
 
+        foreach (GameObject obj in objects)
+        {
+            if (obj.name == name && obj.scene.IsValid())
+            {
+                return obj;
+            }
+        }
+
+        return null;
     }
 
     // Update is called once per frame
