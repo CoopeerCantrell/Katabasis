@@ -236,7 +236,7 @@ MonoBehaviour:
   portrait: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
   speakerName: Achielles
   DialogText:
-  - Would you like to weild the spear of one of the greatestwarriors alive
+  - Would you like to weild the spear of one of the greatest warriors alive
   textSpeed: 1
   Answers:
   - 'yes '

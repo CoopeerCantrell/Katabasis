@@ -168,8 +168,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4661804540482507322}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.4, y: 1.1599998, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.01, y: 1.1599998, z: 0}
   m_LocalScale: {x: 0.21445824, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -286,6 +286,17 @@ MonoBehaviour:
   favorUi: {fileID: 0}
   inFavor: 0
   dialogInteraction: {fileID: 1338263795505423813}
+  dialogue: {fileID: 0}
+  chosenHero: {fileID: 0}
+  dialogGraphs:
+  - {fileID: 11400000, guid: df582a0988991004b80700423f7de8ea, type: 2}
+  - {fileID: 11400000, guid: df582a0988991004b80700423f7de8ea, type: 2}
+  - {fileID: 11400000, guid: df582a0988991004b80700423f7de8ea, type: 2}
+  - {fileID: 11400000, guid: 081d94394a1480640aef2beefbf3f123, type: 2}
+  - {fileID: 11400000, guid: 081d94394a1480640aef2beefbf3f123, type: 2}
+  - {fileID: 11400000, guid: 081d94394a1480640aef2beefbf3f123, type: 2}
+  - {fileID: 11400000, guid: 081d94394a1480640aef2beefbf3f123, type: 2}
+  tempGraphs: []
 --- !u!114 &1501045504591326517
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -329,3 +340,4 @@ MonoBehaviour:
   notAgain: 1
   scriptedText: 0
   canTalk: 1
+  favorEntrance: {fileID: 0}

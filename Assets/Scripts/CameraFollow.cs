@@ -6,6 +6,10 @@ public class CameraFollow : MonoBehaviour
     public float lockedX = 0f;
     public bool canFollow = false;
 
+    void Start(){
+        target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
+        lockedX = gameObject.transform.position.x;
+    }
     void FixedUpdate()
     {
         if (target != null && canFollow)

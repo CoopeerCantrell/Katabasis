@@ -26,6 +26,14 @@ public class SceneTransistion : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene(targetScene);
     }
+    public void ResetRun()
+    {
+        TransitionScene(targetSceneName);
+        ModifuerManager.fallSpeedStack = 0;
+        ModifuerManager.musicRadiusStack = 0;
+        ModifuerManager.speedStack = 0;
+        ModifuerManager.storedItem = null;
+    }
 
     public void QuitGame()
     {

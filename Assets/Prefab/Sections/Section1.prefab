@@ -14095,42 +14095,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: HeroLedge (2)
       objectReference: {fileID: 0}
-    - target: {fileID: 1867895872871093850, guid: 96ddd6738b874fd4c881f8d02e2e94c7, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 4661804540482507322, guid: 96ddd6738b874fd4c881f8d02e2e94c7, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
-    - target: {fileID: 7077009292695427490, guid: 96ddd6738b874fd4c881f8d02e2e94c7, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.01
-      objectReference: {fileID: 0}
-    - target: {fileID: 7077009292695427490, guid: 96ddd6738b874fd4c881f8d02e2e94c7, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7077009292695427490, guid: 96ddd6738b874fd4c881f8d02e2e94c7, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7077009292695427490, guid: 96ddd6738b874fd4c881f8d02e2e94c7, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7077009292695427490, guid: 96ddd6738b874fd4c881f8d02e2e94c7, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7077009292695427490, guid: 96ddd6738b874fd4c881f8d02e2e94c7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7077009292695427490, guid: 96ddd6738b874fd4c881f8d02e2e94c7, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7427395245349441881, guid: 96ddd6738b874fd4c881f8d02e2e94c7, type: 3}
       propertyPath: m_LocalPosition.x
       value: -291.95206

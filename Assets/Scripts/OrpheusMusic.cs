@@ -18,7 +18,7 @@ public class OrpheusMusic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && musicCooldown != true)
+        if (Input.GetKeyDown(KeyCode.Space) && musicCooldown != true)
         {
             StartCoroutine(RunFunctionForFiveSeconds());
         }

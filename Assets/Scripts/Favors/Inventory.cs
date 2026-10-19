@@ -123,6 +123,7 @@ public class Inventory : MonoBehaviour
     {
         Debug.Log(" item:" + itemToAdd +"amount "+  amount);
         int remanining = amount;
+        ModifuerManager.storedItem = itemToAdd;
         foreach (Slot slot in allSlots)
         {
             if (slot.HasItem() && slot.GetItem() == itemToAdd)

@@ -18,10 +18,12 @@ public class SectionPicker : MonoBehaviour
     void Start()
     {
         tempSections = new List<GameObject>();
-        Shuffle(sections,tempSections);
+        Shuffle(sections, tempSections);
         theSection = GetWord();
         Debug.Log(theSection);
         theSection = Instantiate(theSection);
+        if(ModifuerManager.storedItem != null)
+            Inventory.instance.AddItem(ModifuerManager.storedItem, 1);
     }
 
     // Update is called once per frame
@@ -38,7 +40,7 @@ public class SectionPicker : MonoBehaviour
         }
     }
 
-     public GameObject GetWord()
+    public GameObject GetWord()
     {
         GameObject newWord = null;
 
