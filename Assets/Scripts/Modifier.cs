@@ -10,9 +10,11 @@ public class Modifier : MonoBehaviour
     public float speedModAmount = 0.5f;
     public float fallModAmount = 2f;
     public float musicRadModAmount = 1f;
+    public float musicTimerAmount = 1f;
     public int speedStacked = 0;
     public int fallSpeedStacked = 0;
     public int musicRadStacked = 0;
+    public int musicTimerStacked = 0;
     public PlayerMovement player;
     public OrpheusMusic playermusic;
     public List<ModifierObject> modObjects;
@@ -57,6 +59,15 @@ public class Modifier : MonoBehaviour
             }
         }
 
+        if (fallSpeedStacked >= ModifuerManager.fallSpeedStack)
+        {
+            for (int i = 0; i > ModifuerManager.fallSpeedStack; i--)
+            {
+                player.fallSpeedModifier -= fallModAmount;
+                fallSpeedStacked--;
+            }
+        }
+
         if (musicRadStacked <= ModifuerManager.musicRadiusStack)
         {
             for (int i = 0; i < ModifuerManager.musicRadiusStack; i++)
@@ -64,6 +75,14 @@ public class Modifier : MonoBehaviour
                 playermusic.radiusModifier += musicRadModAmount;
                 musicRadStacked++;
                 playermusic.radIncreased = true;
+            }
+        }
+        if (musicTimerStacked <= ModifuerManager.musicTimerStack)
+        {
+            for (int i = 0; i < ModifuerManager.musicTimerStack; i++)
+            {
+                playermusic.timerModifier += musicTimerAmount;
+                musicTimerStacked++;
             }
         }
     }
@@ -92,6 +111,18 @@ public class Modifier : MonoBehaviour
                 ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener(() => UpdateRangeStack());
                 ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener(() => scene.TransitionScene("SampleScene"));
             }
+            else if (currentMod.mod == "Float")
+            {
+                ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener(() => UpdateFlightStack());
+                ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener(() => scene.TransitionScene("SampleScene"));
+                Debug.Log("added listeners");
+            }
+            else if (currentMod.mod == "Timer")
+            {
+                ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener(() => UpdateTimerStack());
+                ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener(() => scene.TransitionScene("SampleScene"));
+                Debug.Log("added listeners");
+            }
             choice1Done = true;
         }
         else if (choice1Done)
@@ -111,10 +142,22 @@ public class Modifier : MonoBehaviour
                 ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener(() => UpdateFallStack());
                 ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener(() => scene.TransitionScene("SampleScene"));
             }
+            else if (currentMod.mod == "Float")
+            {
+                ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener(() => UpdateFlightStack());
+                ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener(() => scene.TransitionScene("SampleScene"));
+                Debug.Log("added listeners");
+            }
             else if (currentMod.mod == "Range")
             {
                 ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener(() => UpdateRangeStack());
                 ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener(() => scene.TransitionScene("SampleScene"));
+            }
+            else if (currentMod.mod == "Timer")
+            {
+                ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener(() => UpdateTimerStack());
+                ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener(() => scene.TransitionScene("SampleScene"));
+                Debug.Log("added listeners");
             }
             choice2Done = true;
         }
@@ -127,7 +170,7 @@ public class Modifier : MonoBehaviour
 
         for (int i = 0; i < list.Count; i++)
         {
-            int index = Random.Range(0, temp.Count - 1);
+            int index = Random.Range(0, temp.Count);
             listTarg.Add(temp[index]);
             temp.RemoveAt(index);
         }
@@ -141,9 +184,17 @@ public class Modifier : MonoBehaviour
     {
         ModifuerManager.fallSpeedStack++;
     }
+    public void UpdateFlightStack()
+    {
+        ModifuerManager.fallSpeedStack--;
+    }
     public void UpdateRangeStack()
     {
         ModifuerManager.musicRadiusStack++;
+    }
+    public void UpdateTimerStack()
+    {
+        ModifuerManager.musicTimerStack++;
     }
     
 

@@ -68,12 +68,12 @@ public class AStarEnemy : MonoBehaviour
             if (hitCollider.CompareTag("Player"))
             {
                 canHunt = true;
-                Debug.Log(canHunt);
+                
             }
         }
 
 
-        if (canHunt)
+        if (canHunt && pauseMenu.GameIsPaused != true && currentWaypoint > 0)
         {
             Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
             Vector2 force = direction * speed * Time.deltaTime;
@@ -84,6 +84,11 @@ public class AStarEnemy : MonoBehaviour
 
             if (distance < wayPointDist)
             {
+                if(path.vectorPath.Count - 1 == currentWaypoint){
+                    path.vectorPath.Clear();
+                    return;
+                }
+                
                 currentWaypoint++;
             }
         }

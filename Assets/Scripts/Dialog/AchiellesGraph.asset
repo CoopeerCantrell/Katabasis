@@ -40,7 +40,7 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  portrait: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  portrait: {fileID: -5694693480829750473, guid: 3b00bb21f3565a144853bf6accd53f0b, type: 3}
   speakerName: Achielles
   DialogText:
   - good you shall strike thy enemy with my spear
@@ -106,7 +106,7 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  portrait: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  portrait: {fileID: -5694693480829750473, guid: 3b00bb21f3565a144853bf6accd53f0b, type: 3}
   speakerName: Achielles
   DialogText:
   - its a bit weird someone would refuse me
@@ -151,7 +151,7 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 0
-  portrait: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  portrait: {fileID: -5694693480829750473, guid: 3b00bb21f3565a144853bf6accd53f0b, type: 3}
   speakerName: Achielles
   DialogText:
   - hello good hero
@@ -233,7 +233,7 @@ MonoBehaviour:
       _connectionType: 0
       _typeConstraint: 0
       _dynamic: 1
-  portrait: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  portrait: {fileID: -5694693480829750473, guid: 3b00bb21f3565a144853bf6accd53f0b, type: 3}
   speakerName: Achielles
   DialogText:
   - Would you like to weild the spear of one of the greatest warriors alive

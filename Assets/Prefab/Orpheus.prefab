@@ -232,8 +232,10 @@ MonoBehaviour:
   speedModifier: 0
   fallSpeed: 23
   fallSpeedModifier: 0
+  movement: {x: 0, y: 0}
   lifeAmount: 1
   deathPanel: {fileID: 0}
+  thrown: 0
 --- !u!114 &3297154791622285329
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,6 +253,9 @@ MonoBehaviour:
   musicCooldown: 0
   musicAura: {fileID: 2056371417104057984}
   radIncreased: 0
+  maxTimer: 5
+  timerModifier: 0
+  noMusic: 0
 --- !u!61 &2822455034585514424
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -309,18 +314,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18f23dfb3dc992c438e3d61f6d6a84d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Modifier
-  speedModAmount: 0.5
-  fallModAmount: 2
+  speedModAmount: 1
+  fallModAmount: 3
   musicRadModAmount: 1
+  musicTimerAmount: 1
   speedStacked: 0
   fallSpeedStacked: 0
   musicRadStacked: 0
+  musicTimerStacked: 0
   player: {fileID: 0}
   playermusic: {fileID: 0}
   modObjects:
   - {fileID: 11400000, guid: 0c885940e89a336459a895c32d7756b7, type: 2}
   - {fileID: 11400000, guid: 8e660290517c0e343904148423f34608, type: 2}
   - {fileID: 11400000, guid: 65be687ecf4df8045b2a50a5e63de790, type: 2}
+  - {fileID: 11400000, guid: ad59e0405f1e7fc45b4202fbaad0e45d, type: 2}
+  - {fileID: 11400000, guid: f96dfce876863ca46aec7cb91b1e184e, type: 2}
   copiedModObjects: []
   scene: {fileID: 0}
   choice1Done: 0

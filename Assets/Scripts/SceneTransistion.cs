@@ -32,6 +32,7 @@ public class SceneTransistion : MonoBehaviour
         ModifuerManager.fallSpeedStack = 0;
         ModifuerManager.musicRadiusStack = 0;
         ModifuerManager.speedStack = 0;
+        ModifuerManager.musicTimerStack = 0;
         ModifuerManager.storedItem = null;
     }
 

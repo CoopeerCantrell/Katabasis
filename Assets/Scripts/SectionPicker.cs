@@ -22,8 +22,11 @@ public class SectionPicker : MonoBehaviour
         theSection = GetWord();
         Debug.Log(theSection);
         theSection = Instantiate(theSection);
-        if(ModifuerManager.storedItem != null)
+        if (ModifuerManager.storedItem != null)
+        {
             Inventory.instance.AddItem(ModifuerManager.storedItem, 1);
+            Inventory.instance.EquipHandItem();
+        }
     }
 
     // Update is called once per frame
@@ -34,7 +37,7 @@ public class SectionPicker : MonoBehaviour
 
         for (int i = 0; i < strings.Count; i++)
         {
-            int index = Random.Range(0, temp.Count - 1);
+            int index = Random.Range(0, temp.Count);
             tempwords.Add(temp[index]);
             temp.RemoveAt(index);
         }

@@ -10,9 +10,10 @@ public class PlayerMovement : MonoBehaviour
     public float speedModifier = 0f;
     public float fallSpeed = 16f;
     public float fallSpeedModifier=0f;
-    Vector2 movement;
+    public Vector2 movement;
     public int lifeAmount = 1;
     public GameObject deathPanel;
+    public bool thrown = false;
     void Awake()
     {
         body = GetComponent<Rigidbody2D>();

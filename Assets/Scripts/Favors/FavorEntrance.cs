@@ -16,9 +16,10 @@ public class FavorEntrance : MonoBehaviour
     {
         favorUi = FindInactiveObject("FavorUI");
         dialogue = gameObject.GetComponent<Dialogue>();
-        Shuffle(dialogGraphs, tempGraphs);
         tempGraphs = new List<DialogGraph>();
         Shuffle(dialogGraphs, tempGraphs);
+        
+        //Shuffle(dialogGraphs, tempGraphs);
         chosenHero = GetWord();
     }
 
@@ -35,7 +36,7 @@ public class FavorEntrance : MonoBehaviour
 
         for (int i = 0; i < strings.Count; i++)
         {
-            int index = Random.Range(0, temp.Count - 1);
+            int index = Random.Range(0, temp.Count);
             tempwords.Add(temp[index]);
             temp.RemoveAt(index);
         }
@@ -76,6 +77,7 @@ public class FavorEntrance : MonoBehaviour
             dialogInteraction.StartDiologue(gameObject.GetComponent<FavorEntrance>());
             favorUi.SetActive(true);
             Time.timeScale = 0f;
+            pauseMenu.GameIsPaused = true;
             inFavor = true;
         }
     }
@@ -84,6 +86,7 @@ public class FavorEntrance : MonoBehaviour
     {
         favorUi.SetActive(false);
         Time.timeScale = 1f;
+        pauseMenu.GameIsPaused = false;
         inFavor = false;
     }
 }

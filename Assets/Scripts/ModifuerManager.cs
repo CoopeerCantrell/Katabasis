@@ -27,6 +27,7 @@ public class ModifuerManager : MonoBehaviour
     public static int speedStack = 0;
     public static int fallSpeedStack = 0;
     public static int musicRadiusStack = 0;
+    public static int musicTimerStack = 0;
 
     public static ItemSO storedItem;
 

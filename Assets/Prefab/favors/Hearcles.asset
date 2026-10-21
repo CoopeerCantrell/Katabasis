@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4ef94cddad45cf243a5323ac6efa771d, type: 3}
-  m_Name: Spear
+  m_Name: Hearcles
   m_EditorClassIdentifier: Assembly-CSharp::ItemSO
-  itemName: Spears
-  icon: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  itemName: Hearcles
+  icon: {fileID: 1353105713266110468, guid: fedc9e4af8ed019449adc738bea44c15, type: 3}
   maxStackSize: 1
-  handItemPrefab: {fileID: 2983573112148307959, guid: 5216ccfa557eaeb499899bd82eb8f78d, type: 3}
-  description: spear
+  handItemPrefab: {fileID: 4693450719639413400, guid: 7ca5a4c27f0b73c43a1385bbed958faa, type: 3}
+  description: thrown

@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e8681480ab0f94599fe976cb27bb70, type: 3}
+  m_Name: FloatSpeedMod
+  m_EditorClassIdentifier: Assembly-CSharp::ModifierObject
+  sprite: {fileID: -5694693480829750473, guid: 3b00bb21f3565a144853bf6accd53f0b, type: 3}
+  nameText: Float Speed Modifier
+  descriptionText: This decreases the max falling speed of the player
+  mod: Float

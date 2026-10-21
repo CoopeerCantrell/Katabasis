@@ -10,12 +10,12 @@ public class CameraFollow : MonoBehaviour
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();
         lockedX = gameObject.transform.position.x;
     }
-    void FixedUpdate()
+    void LateUpdate()
     {
         if (target != null && canFollow)
         {
 
-            transform.position = new Vector3(lockedX, target.position.y, -10);
+            transform.position = new Vector3(lockedX, target.position.y - 8, -10);
         }
     }
 
@@ -30,7 +30,7 @@ public class CameraFollow : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            canFollow = false;
+            //canFollow = false;
         }
     }
 }

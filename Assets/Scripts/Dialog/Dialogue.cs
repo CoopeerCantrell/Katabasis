@@ -27,6 +27,8 @@ public class Dialogue : MonoBehaviour
     public AddItem addItem;
     public ItemSO Achillies;
     public ItemSO Odysseus;
+    public ItemSO Theseus;
+    public ItemSO Heracles;
     public FavorEntrance favorEntrance;
 
 
@@ -208,7 +210,7 @@ public class Dialogue : MonoBehaviour
             }
             else if ((activeSegment as FavorSegment).Heracles)
             {
-
+                AddItemToInvo(Heracles);
 
                 if (activeSegment.GetPort("output").IsConnected)
                 {
@@ -224,7 +226,7 @@ public class Dialogue : MonoBehaviour
             }
             else if ((activeSegment as FavorSegment).Theseus)
             {
-
+                AddItemToInvo(Theseus);
 
                 if (activeSegment.GetPort("output").IsConnected)
                 {

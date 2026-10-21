@@ -269,6 +269,7 @@ public class Inventory : MonoBehaviour
         {
             equippedSlot.Setitem(equippedSlot.GetItem(), newAmount);
         }
+        ModifuerManager.storedItem = null;
     }
 }
 
