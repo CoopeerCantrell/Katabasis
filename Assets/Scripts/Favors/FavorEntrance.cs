@@ -77,7 +77,7 @@ public class FavorEntrance : MonoBehaviour
             dialogInteraction.StartDiologue(gameObject.GetComponent<FavorEntrance>());
             favorUi.SetActive(true);
             Time.timeScale = 0f;
-            pauseMenu.GameIsPaused = true;
+            PauseMenu.GameIsPaused = true;
             inFavor = true;
         }
     }
@@ -86,7 +86,7 @@ public class FavorEntrance : MonoBehaviour
     {
         favorUi.SetActive(false);
         Time.timeScale = 1f;
-        pauseMenu.GameIsPaused = false;
+        PauseMenu.GameIsPaused = false;
         inFavor = false;
     }
 }

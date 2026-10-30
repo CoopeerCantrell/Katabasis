@@ -24,7 +24,7 @@ public class TutorialPanel : MonoBehaviour
         {
             Time.timeScale = 0.0f;
         }
-        else if (inTutorial != true && pauseMenu.GameIsPaused != true)
+        else if (inTutorial != true && PauseMenu.GameIsPaused != true)
         {
             Time.timeScale = 1f;
         }

@@ -73,7 +73,7 @@ public class AStarEnemy : MonoBehaviour
         }
 
 
-        if (canHunt && pauseMenu.GameIsPaused != true && currentWaypoint > 0)
+        if (canHunt && PauseMenu.GameIsPaused != true && currentWaypoint > 0)
         {
             Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
             Vector2 force = direction * speed * Time.deltaTime;
