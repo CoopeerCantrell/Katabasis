@@ -41,13 +41,6 @@ public class OrpheusMusic : MonoBehaviour
             {
                 GameObject enemy = hitCollider.gameObject;
                 float orispeeds = enemy.GetComponent<BasicEnemy>().speed;
-                if (orispeeds != 0)
-                {
-                    orispeeds = -10;
-                }
-
-                enemy.GetComponent<BasicEnemy>().SetSpeed(orispeeds);
-                Debug.Log("set original speed");
                 float speeds = orispeeds / 4;
                 enemy.GetComponent<BasicEnemy>().SetSpeed(speeds);
                 Debug.Log("set slower speed");
@@ -63,9 +56,7 @@ public class OrpheusMusic : MonoBehaviour
             if (hitCollider.CompareTag("Enemy"))
             {
                 GameObject enemy = hitCollider.gameObject;
-                float orispeeds = enemy.GetComponent<BasicEnemy>().speed;
-                if (orispeeds != 0)
-                    orispeeds = -10;
+                float orispeeds = enemy.GetComponent<BasicEnemy>().oriSpeed;
                 enemy.GetComponent<BasicEnemy>().SetSpeed(orispeeds);
                 Debug.Log("set original speed after leaving area of ability");
             }
@@ -74,20 +65,9 @@ public class OrpheusMusic : MonoBehaviour
 
     IEnumerator RunFunctionForFiveSeconds()
     {
-        float elapsedTime = 0f;
-        float duration = maxTimer;
-
-
         musicAura.SetActive(true);
-        while (elapsedTime < (duration + timerModifier))
-        {
-            ResetSpeed();
-            PlayMusic();
-
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
+        PlayMusic();
+        yield return new WaitForSeconds(maxTimer + timerModifier);
         ResetSpeed();
         musicAura.SetActive(false);
         StartCoroutine(CoolDownFor3Sec());

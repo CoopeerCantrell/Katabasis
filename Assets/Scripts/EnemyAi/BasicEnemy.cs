@@ -9,11 +9,13 @@ public class BasicEnemy : MonoBehaviour
     private Rigidbody2D rd;
     private Transform currentPoint;
     public float speed;
-    
+    public float oriSpeed;
+
     void Start()
     {
         rd = GetComponent<Rigidbody2D>();
         currentPoint = pointB.transform;
+        oriSpeed = speed;
     }
 
     // Update is called once per frame
