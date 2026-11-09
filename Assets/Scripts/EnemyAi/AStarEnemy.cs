@@ -27,16 +27,16 @@ public class AStarEnemy : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
-        InvokeRepeating("UpdatePath", 0f, 0.1f);
-        
+        //InvokeRepeating("UpdatePath", 0f, 0.1f);
+        //UpdatePath();
     }
 
     void UpdatePath()
     {
-        if (seeker.IsDone())
-        {
+        //if (seeker.IsDone())
+        //{
             seeker.StartPath(rb.position, target.position, OnPathComplete);
-        }
+        //}
     }
 
     void OnPathComplete(Path p)
@@ -46,13 +46,23 @@ public class AStarEnemy : MonoBehaviour
             path = p;
             currentWaypoint = 0;
         }
+        else
+        {
+            Debug.LogWarning(p.errorLog);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (path == null)
+        if (path == null || reachedEndOfPoint)
+        {
+            if (seeker.IsDone())
+            {
+                seeker.StartPath(rb.position, target.position, OnPathComplete);
+            }
             return;
+        }
 
         if (currentWaypoint >= path.vectorPath.Count)
         {

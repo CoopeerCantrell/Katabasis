@@ -13,7 +13,7 @@ public class SectionPicker : MonoBehaviour
     void Awake()
     {
         Shuffle(sections,tempSections);
-        Debug.Log(theSection);
+        //Debug.Log(theSection);
     }
     void Start()
     {

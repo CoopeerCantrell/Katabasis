@@ -1,4 +1,5 @@
 using System.Collections;
+
 using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
@@ -9,11 +10,15 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5f;
     public float speedModifier = 0f;
     public float fallSpeed = 16f;
-    public float fallSpeedModifier=0f;
+    public float fallSpeedModifier = 0f;
     public Vector2 movement;
     public int lifeAmount = 1;
     public GameObject deathPanel;
     public bool thrown = false;
+    public bool noMovement = false;
+    public static bool canContinueDeath = false;
+    public bool inAnimatioon = false;
+    public GameObject player;
     void Awake()
     {
         body = GetComponent<Rigidbody2D>();
@@ -21,6 +26,7 @@ public class PlayerMovement : MonoBehaviour
     }
     void Start()
     {
+        player = gameObject;
         deathPanel = FindInactiveObject("DeathPanel");
     }
 
@@ -44,7 +50,8 @@ public class PlayerMovement : MonoBehaviour
     {
         movement.x = Input.GetAxisRaw("Horizontal");
 
-        body.linearVelocity = new Vector2(movement.x * (speed + speedModifier), body.linearVelocity.y);
+        if(!noMovement)
+            body.linearVelocity = new Vector2(movement.x * (speed + speedModifier), body.linearVelocity.y);
 
         if (body.linearVelocity.y < -(fallSpeed + fallSpeedModifier))
         {
@@ -54,10 +61,19 @@ public class PlayerMovement : MonoBehaviour
             );
         }
 
-        if (lifeAmount == 0)
+        if (lifeAmount <= 0)
         {
-            deathPanel.SetActive(true);
-            Time.timeScale = 0f;
+            if (!inAnimatioon)
+            {
+                inAnimatioon = true;
+                TweenHelper.TakeDamage(transform);
+                StartCoroutine(CancelPlayer());
+            }
+            if (canContinueDeath && inAnimatioon)
+                {
+                    deathPanel.SetActive(true);
+                    Time.timeScale = 0f;
+                }
         }
     }
 
@@ -81,5 +97,15 @@ public class PlayerMovement : MonoBehaviour
 
         cantBeHit = false;
         Debug.Log("can be damaged again");
+    }
+
+    IEnumerator CancelPlayer()
+    {
+        noMovement = true;
+        player.GetComponent<SpriteRenderer>().color = new Color(125f, 0f, 0f, 225f);
+        yield return new WaitForSeconds(0.5f);
+        noMovement = false;
+        player.GetComponent<SpriteRenderer>().color = new Color(225f, 225f, 225f, 225f);
+        canContinueDeath = true;
     }
 }
