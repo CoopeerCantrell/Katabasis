@@ -1,7 +1,5 @@
 using UnityEngine;
 using Pathfinding;
-using UnityEngine.Splines;
-using NUnit.Framework.Constraints;
 
 
 public class AStarEnemy : MonoBehaviour
@@ -17,7 +15,8 @@ public class AStarEnemy : MonoBehaviour
 
     Path path;
     int currentWaypoint = 0;
-    bool reachedEndOfPoint = false;
+    float nextPathUpdateTime;
+    const float PathUpdateInterval = 0.5f;
 
     Seeker seeker;
     Rigidbody2D rb;
@@ -27,16 +26,15 @@ public class AStarEnemy : MonoBehaviour
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
-        //InvokeRepeating("UpdatePath", 0f, 0.1f);
-        //UpdatePath();
     }
 
     void UpdatePath()
     {
-        //if (seeker.IsDone())
-        //{
+        if (target != null && seeker.IsDone())
+        {
             seeker.StartPath(rb.position, target.position, OnPathComplete);
-        //}
+            nextPathUpdateTime = Time.time + PathUpdateInterval;
+        }
     }
 
     void OnPathComplete(Path p)
@@ -52,56 +50,52 @@ public class AStarEnemy : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        if (path == null || reachedEndOfPoint)
+        if (PauseMenu.GameIsPaused)
         {
-            if (seeker.IsDone())
-            {
-                seeker.StartPath(rb.position, target.position, OnPathComplete);
-            }
             return;
         }
 
-        if (currentWaypoint >= path.vectorPath.Count)
-        {
-            reachedEndOfPoint = true;
-        }
-        else
-        {
-            reachedEndOfPoint = false;
-        }
-        hitColliders = Physics2D.OverlapCircleAll(transform.position,radius);
-        foreach (var hitCollider  in hitColliders)
+        hitColliders = Physics2D.OverlapCircleAll(transform.position, radius);
+        foreach (var hitCollider in hitColliders)
         {
             if (hitCollider.CompareTag("Player"))
             {
                 canHunt = true;
-                
-            }
-        }
-
-
-        if (canHunt && PauseMenu.GameIsPaused != true && currentWaypoint > 0)
-        {
-            Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
-            Vector2 force = direction * speed * Time.deltaTime;
-
-            rb.AddForce(force);
-
-            float distance = Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]);
-
-            if (distance < wayPointDist)
-            {
-                if(path.vectorPath.Count - 1 == currentWaypoint){
-                    path.vectorPath.Clear();
-                    return;
+                if (target == null)
+                {
+                    target = hitCollider.transform;
                 }
-                
-                currentWaypoint++;
             }
         }
+
+        if (path == null || Time.time >= nextPathUpdateTime)
+        {
+            UpdatePath();
+        }
+
+        if (!canHunt || target == null || path == null)
+        {
+            return;
+        }
+
+        // Skip reached waypoints, including the starting point at index zero.
+        while (currentWaypoint < path.vectorPath.Count &&
+               Vector2.Distance(rb.position, path.vectorPath[currentWaypoint]) < wayPointDist)
+        {
+            currentWaypoint++;
+        }
+
+        // Keep the completed path intact while waiting for the next path update.
+        if (currentWaypoint >= path.vectorPath.Count)
+        {
+            return;
+        }
+
+        Vector2 direction = ((Vector2)path.vectorPath[currentWaypoint] - rb.position).normalized;
+        Vector2 force = direction * speed * Time.fixedDeltaTime;
+        rb.AddForce(force);
     }
 
     void OnTriggerEnter2D(Collider2D collision)
