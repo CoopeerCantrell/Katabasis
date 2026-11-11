@@ -8,6 +8,7 @@ public class AStarEnemy : MonoBehaviour
     public Transform target;
 
     public float speed = 30f;
+    public float speedModifierAmount = 100f;
     public float wayPointDist = 3f;
     public bool canHunt = false;
     public float radius = 2f;
@@ -25,7 +26,7 @@ public class AStarEnemy : MonoBehaviour
     {
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
-
+        speed = speed - (speedModifierAmount * ModifuerManager.enemySpeedDown);
     }
 
     void UpdatePath()

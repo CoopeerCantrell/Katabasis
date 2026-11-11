@@ -5,11 +5,14 @@ public class NextSection : MonoBehaviour
 {
     public SceneTransistion scene;
     public GameObject ModPaanels;
+    public AudioSource audioSource;
+    public AudioClip audioClip;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         ModPaanels = FindInactiveObject("ModPanel");
         scene = GameObject.FindGameObjectWithTag("Inventory").GetComponent<SceneTransistion>();
+        audioSource = GameObject.FindGameObjectWithTag("Inventory").GetComponent<AudioSource>();
     }
     GameObject FindInactiveObject(string name)
     {
@@ -35,6 +38,7 @@ public class NextSection : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+            audioSource.PlayOneShot(audioClip);
             ModPaanels.SetActive(true);
             Time.timeScale = 0f;
         }

@@ -19,9 +19,12 @@ public class PlayerMovement : MonoBehaviour
     public static bool canContinueDeath = false;
     public bool inAnimatioon = false;
     public GameObject player;
+    public AudioSource audioSource;
+    public AudioClip wilhiem;
     void Awake()
     {
         body = GetComponent<Rigidbody2D>();
+        audioSource = GameObject.FindGameObjectWithTag("Inventory").GetComponent<AudioSource>();
         Time.timeScale = 1f;
     }
     void Start()
@@ -66,6 +69,7 @@ public class PlayerMovement : MonoBehaviour
             if (!inAnimatioon)
             {
                 inAnimatioon = true;
+                audioSource.PlayOneShot(wilhiem);
                 TweenHelper.TakeDamage(transform);
                 StartCoroutine(CancelPlayer());
             }

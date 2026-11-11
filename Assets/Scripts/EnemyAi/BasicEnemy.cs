@@ -9,6 +9,7 @@ public class BasicEnemy : MonoBehaviour
     private Rigidbody2D rd;
     private Transform currentPoint;
     public float speed;
+    public float speedModifierAmount = 1f;
     public float oriSpeed;
 
     void Start()
@@ -16,21 +17,35 @@ public class BasicEnemy : MonoBehaviour
         rd = GetComponent<Rigidbody2D>();
         currentPoint = pointB.transform;
         oriSpeed = speed;
+        if (speed > 0)
+        {
+            speed = speed - (speedModifierAmount * ModifuerManager.enemySpeedDown);
+        }
+        else
+        {
+            speed = speed + (speedModifierAmount * ModifuerManager.enemySpeedDown);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         Vector2 point = currentPoint.position - transform.position;
-        if (currentPoint == pointB.transform) {
-            rd.linearVelocity = new Vector2(-speed, 0);
+        if (oriSpeed != 0)
+        {
+            if (currentPoint == pointB.transform)
+            {
+                rd.linearVelocity = new Vector2(-speed, 0);
+            }
+            else
+            {
+                rd.linearVelocity = new Vector2(speed, 0);
+            }
         }
-        else {
-            rd.linearVelocity = new Vector2(speed, 0);
-        }
-        if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform) {
-            currentPoint = pointA.transform;
-        }
+        if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointB.transform)
+            {
+                currentPoint = pointA.transform;
+            }
         if (Vector2.Distance(transform.position, currentPoint.position) < 0.5f && currentPoint == pointA.transform) {
             currentPoint = pointB.transform;
         }

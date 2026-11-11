@@ -30,6 +30,7 @@ public class Dialogue : MonoBehaviour
     public ItemSO Theseus;
     public ItemSO Heracles;
     public FavorEntrance favorEntrance;
+    public AudioClip buttonsound;
 
 
     //public NPC npc;
@@ -154,6 +155,8 @@ public class Dialogue : MonoBehaviour
                     int index = answerIndex;
 
                     btn.GetComponentInChildren<Button>().onClick.AddListener((() => { AnswerClicked(index); }));
+                    btn.GetComponentInChildren<Button>().onClick.AddListener((() => { GameObject.FindGameObjectWithTag("Inventory").GetComponent<AudioSource>().PlayOneShot(buttonsound); }));
+                    
 
                     answerIndex++;
                 }

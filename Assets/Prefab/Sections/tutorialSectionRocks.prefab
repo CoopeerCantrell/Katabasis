@@ -1393,6 +1393,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
   target: {fileID: 0}
   lockedX: 0
+  cameraLevel: 8
   canFollow: 0
 --- !u!1 &6834446868037754476
 GameObject:
@@ -1868,6 +1869,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NextSection
   scene: {fileID: 0}
   ModPaanels: {fileID: 0}
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: c10c3106a5fc9b8428d8efa385a37eeb, type: 3}
 --- !u!61 &4787518151481428234
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2013,6 +2016,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 5738748067650202644}
     m_Modifications:
+    - target: {fileID: 1501045504591326517, guid: 96ddd6738b874fd4c881f8d02e2e94c7, type: 3}
+      propertyPath: buttonsound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5629b4423561e4a469bd28037a9bed89, type: 3}
     - target: {fileID: 1867895872871093850, guid: 96ddd6738b874fd4c881f8d02e2e94c7, type: 3}
       propertyPath: m_Name
       value: HeroLedge
@@ -2027,7 +2034,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7427395245349441881, guid: 96ddd6738b874fd4c881f8d02e2e94c7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -99.3
+      value: -103.6
       objectReference: {fileID: 0}
     - target: {fileID: 7427395245349441881, guid: 96ddd6738b874fd4c881f8d02e2e94c7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2105,7 +2112,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7336086259639503939, guid: d59533a46769c994a89e1b999bd232fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -80.71
+      value: -84.61
       objectReference: {fileID: 0}
     - target: {fileID: 7336086259639503939, guid: d59533a46769c994a89e1b999bd232fb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2253,7 +2260,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7336086259639503939, guid: d59533a46769c994a89e1b999bd232fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -85.7
+      value: -89.6
       objectReference: {fileID: 0}
     - target: {fileID: 7336086259639503939, guid: d59533a46769c994a89e1b999bd232fb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2331,7 +2338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7336086259639503939, guid: d59533a46769c994a89e1b999bd232fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -76.4
+      value: -80.3
       objectReference: {fileID: 0}
     - target: {fileID: 7336086259639503939, guid: d59533a46769c994a89e1b999bd232fb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2479,7 +2486,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7336086259639503939, guid: d59533a46769c994a89e1b999bd232fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -125.3
+      value: -133.6
       objectReference: {fileID: 0}
     - target: {fileID: 7336086259639503939, guid: d59533a46769c994a89e1b999bd232fb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2549,7 +2556,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7336086259639503939, guid: d59533a46769c994a89e1b999bd232fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -83.4
+      value: -87.3
       objectReference: {fileID: 0}
     - target: {fileID: 7336086259639503939, guid: d59533a46769c994a89e1b999bd232fb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2783,7 +2790,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7336086259639503939, guid: d59533a46769c994a89e1b999bd232fb, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -72.6
+      value: -76.5
       objectReference: {fileID: 0}
     - target: {fileID: 7336086259639503939, guid: d59533a46769c994a89e1b999bd232fb, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2840,13 +2847,45 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3714737761130280985}
     - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: buttonsound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5629b4423561e4a469bd28037a9bed89, type: 3}
+    - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
       propertyPath: playermusic
       value: 
       objectReference: {fileID: 4636462310420324204}
+    - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: fallModAmount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: speedModAmount
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: musicTimerAmount
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: musicRadModAmount
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: modObjects.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: 'modObjects.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 778da284494106d4c96e9b5ecf02437f, type: 2}
     - target: {fileID: 4838708360547040115, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
       propertyPath: m_Name
       value: Orpheus
       objectReference: {fileID: 0}
+    - target: {fileID: 6779249461876948836, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: wilhiem
+      value: 
+      objectReference: {fileID: 8300000, guid: c916226690c3c3c4daa192e2d66c08b5, type: 3}
     - target: {fileID: 8431024069224902684, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.619904

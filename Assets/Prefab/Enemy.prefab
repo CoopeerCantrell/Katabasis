@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5007489817067623594}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -114,6 +114,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AStarEnemy
   target: {fileID: 0}
   speed: 900
+  speedModifierAmount: 300
   wayPointDist: 3
   canHunt: 0
   radius: 5

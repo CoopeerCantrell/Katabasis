@@ -382,6 +382,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NextSection
   scene: {fileID: 0}
   ModPaanels: {fileID: 0}
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: c10c3106a5fc9b8428d8efa385a37eeb, type: 3}
 --- !u!61 &1829250035153881291
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -522,6 +524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
   target: {fileID: 0}
   lockedX: 0
+  cameraLevel: 8
   canFollow: 0
 --- !u!1 &1281619955577620791
 GameObject:
@@ -1996,7 +1999,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -3
   m_MaskInteraction: 0
   m_Sprite: {fileID: -6311352213680616822, guid: 5e0bc828b9671d945901e750ac047073, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -2016,6 +2019,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 591037522360964999}
     m_Modifications:
+    - target: {fileID: 1501045504591326517, guid: 96ddd6738b874fd4c881f8d02e2e94c7, type: 3}
+      propertyPath: buttonsound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5629b4423561e4a469bd28037a9bed89, type: 3}
     - target: {fileID: 1867895872871093850, guid: 96ddd6738b874fd4c881f8d02e2e94c7, type: 3}
       propertyPath: m_Name
       value: HeroLedge
@@ -2527,13 +2534,45 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 832956181502531905}
     - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: buttonsound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5629b4423561e4a469bd28037a9bed89, type: 3}
+    - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
       propertyPath: playermusic
       value: 
       objectReference: {fileID: 8672282086689603124}
+    - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: fallModAmount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: speedModAmount
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: musicTimerAmount
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: musicRadModAmount
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: modObjects.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: 'modObjects.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 778da284494106d4c96e9b5ecf02437f, type: 2}
     - target: {fileID: 4838708360547040115, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
       propertyPath: m_Name
       value: Orpheus (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6779249461876948836, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: wilhiem
+      value: 
+      objectReference: {fileID: 8300000, guid: c916226690c3c3c4daa192e2d66c08b5, type: 3}
     - target: {fileID: 8431024069224902684, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -247.1

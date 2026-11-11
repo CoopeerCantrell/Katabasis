@@ -4,6 +4,7 @@ public class CameraFollow : MonoBehaviour
 {
     public Transform target;
     public float lockedX = 0f;
+    public float cameraLevel = 8;
     public bool canFollow = false;
 
     void Start(){
@@ -15,7 +16,7 @@ public class CameraFollow : MonoBehaviour
         if (target != null && canFollow)
         {
 
-            transform.position = new Vector3(lockedX, target.position.y - 8, -10);
+            transform.position = new Vector3(lockedX, target.position.y - cameraLevel, -10);
         }
     }
 

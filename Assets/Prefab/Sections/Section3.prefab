@@ -1904,6 +1904,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
   target: {fileID: 0}
   lockedX: 0
+  cameraLevel: 8
   canFollow: 0
 --- !u!1 &6860259019449827254
 GameObject:
@@ -2225,6 +2226,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NextSection
   scene: {fileID: 0}
   ModPaanels: {fileID: 0}
+  audioSource: {fileID: 0}
+  audioClip: {fileID: 8300000, guid: c10c3106a5fc9b8428d8efa385a37eeb, type: 3}
 --- !u!61 &7723701757962625000
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2695,6 +2698,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7788365406100514075}
     m_Modifications:
+    - target: {fileID: 1501045504591326517, guid: 96ddd6738b874fd4c881f8d02e2e94c7, type: 3}
+      propertyPath: buttonsound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5629b4423561e4a469bd28037a9bed89, type: 3}
     - target: {fileID: 1867895872871093850, guid: 96ddd6738b874fd4c881f8d02e2e94c7, type: 3}
       propertyPath: m_Name
       value: HeroLedge
@@ -3031,6 +3038,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 3832503446008576277}
+    - target: {fileID: 4127912781530694126, guid: 647e798a1cb3e064d8ab813ae87f8136, type: 3}
+      propertyPath: speedModifierAmount
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3101,6 +3112,10 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 3832503446008576277}
+    - target: {fileID: 4127912781530694126, guid: 647e798a1cb3e064d8ab813ae87f8136, type: 3}
+      propertyPath: speedModifierAmount
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3560,13 +3575,45 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 2178178006043391597}
     - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: buttonsound
+      value: 
+      objectReference: {fileID: 8300000, guid: 5629b4423561e4a469bd28037a9bed89, type: 3}
+    - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
       propertyPath: playermusic
       value: 
       objectReference: {fileID: 7921571146552152344}
+    - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: fallModAmount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: speedModAmount
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: musicTimerAmount
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: musicRadModAmount
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: modObjects.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4746743910240359765, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: 'modObjects.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 778da284494106d4c96e9b5ecf02437f, type: 2}
     - target: {fileID: 4838708360547040115, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
       propertyPath: m_Name
       value: Orpheus (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6779249461876948836, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: wilhiem
+      value: 
+      objectReference: {fileID: 8300000, guid: c916226690c3c3c4daa192e2d66c08b5, type: 3}
     - target: {fileID: 8431024069224902684, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: -246.9
@@ -4259,6 +4306,10 @@ PrefabInstance:
       propertyPath: pointB
       value: 
       objectReference: {fileID: 3612838886230825787}
+    - target: {fileID: 6923136553026591946, guid: fded770eefdafeb419bdda84f122a84c, type: 3}
+      propertyPath: speedModifierAmount
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8300894014753256594, guid: fded770eefdafeb419bdda84f122a84c, type: 3}
       propertyPath: m_Name
       value: enemy 1

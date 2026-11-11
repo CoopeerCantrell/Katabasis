@@ -28,6 +28,8 @@ public class ModifuerManager : MonoBehaviour
     public static int fallSpeedStack = 0;
     public static int musicRadiusStack = 0;
     public static int musicTimerStack = 0;
+    public static int enemySpeedDown = 0;
+    public int test;
 
     public static ItemSO storedItem;
 
@@ -52,6 +54,6 @@ public class ModifuerManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        test = enemySpeedDown;
     }
 }

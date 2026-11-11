@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1dd4f195694d03419001c3e83d67a1c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Minotaur
-  speed: 20
+  speed: 30
   right: 1
 --- !u!50 &9060766163614562699
 Rigidbody2D:

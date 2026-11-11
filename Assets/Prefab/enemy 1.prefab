@@ -136,6 +136,8 @@ MonoBehaviour:
   pointA: {fileID: 0}
   pointB: {fileID: 0}
   speed: -10
+  speedModifierAmount: 3
+  oriSpeed: 0
 --- !u!58 &1118234233580922060
 CircleCollider2D:
   m_ObjectHideFlags: 0

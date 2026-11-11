@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e8681480ab0f94599fe976cb27bb70, type: 3}
+  m_Name: EnemySpeedMod
+  m_EditorClassIdentifier: Assembly-CSharp::ModifierObject
+  sprite: {fileID: -5828911728790030908, guid: 4da4dd818057e5d41a18f41367ea3af5, type: 3}
+  nameText: Enemy Speed Modifier
+  descriptionText: Slows down the speed of the eniemes
+  mod: EnemySpeed

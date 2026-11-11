@@ -435,7 +435,7 @@ MonoBehaviour:
   portrait: {fileID: 1530616223}
   nameText: {fileID: 922152093}
   buttonPrefab: {fileID: 9209290202095697004, guid: a3d6a3051fc509c4a9fa3a363bdb147d, type: 3}
-  buttonParent: {fileID: 974471833}
+  buttonParent: {fileID: 0}
   textBox: {fileID: 0}
   skip: {fileID: 1316595170}
   nameTextObj: {fileID: 922152091}
@@ -926,11 +926,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
---- !u!224 &974471833 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 7432394475303073244, guid: 75400c25acb2dbb4eb4bba96d032569c, type: 3}
-  m_PrefabInstance: {fileID: 1448103660}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &990026552
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1381,6 +1376,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
   target: {fileID: 1078381295}
   lockedX: 0
+  cameraLevel: 8
+  canFollow: 0
 --- !u!114 &1188723892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1903,6 +1900,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
   target: {fileID: 1078381295}
   lockedX: 0
+  cameraLevel: 8
+  canFollow: 0
 --- !u!114 &1749878330
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2179,7 +2178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79b1376916051e84d96347b568c51177, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SceneTransistion
---- !u!1001 &61272505250693203
+--- !u!1001 &4509236247132761366
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -2187,63 +2186,63 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6313454732740178863, guid: f3f4aef98617329458a3d359497a8019, type: 3}
-      propertyPath: scene
-      value: 
-      objectReference: {fileID: 2137454928}
-    - target: {fileID: 6313454732740178863, guid: f3f4aef98617329458a3d359497a8019, type: 3}
-      propertyPath: ModPaanels
-      value: 
-      objectReference: {fileID: 218645063}
-    - target: {fileID: 6860259019449827254, guid: f3f4aef98617329458a3d359497a8019, type: 3}
-      propertyPath: m_Name
-      value: Section3
-      objectReference: {fileID: 0}
-    - target: {fileID: 7788365406100514075, guid: f3f4aef98617329458a3d359497a8019, type: 3}
+    - target: {fileID: 3230877995150797754, guid: e3b3bf775e696054c8c165f2b1c5665c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 241
+      value: 244.2
       objectReference: {fileID: 0}
-    - target: {fileID: 7788365406100514075, guid: f3f4aef98617329458a3d359497a8019, type: 3}
+    - target: {fileID: 3230877995150797754, guid: e3b3bf775e696054c8c165f2b1c5665c, type: 3}
       propertyPath: m_LocalPosition.y
       value: 363.83182
       objectReference: {fileID: 0}
-    - target: {fileID: 7788365406100514075, guid: f3f4aef98617329458a3d359497a8019, type: 3}
+    - target: {fileID: 3230877995150797754, guid: e3b3bf775e696054c8c165f2b1c5665c, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7788365406100514075, guid: f3f4aef98617329458a3d359497a8019, type: 3}
+    - target: {fileID: 3230877995150797754, guid: e3b3bf775e696054c8c165f2b1c5665c, type: 3}
       propertyPath: m_LocalRotation.w
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 7788365406100514075, guid: f3f4aef98617329458a3d359497a8019, type: 3}
+    - target: {fileID: 3230877995150797754, guid: e3b3bf775e696054c8c165f2b1c5665c, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 7788365406100514075, guid: f3f4aef98617329458a3d359497a8019, type: 3}
+    - target: {fileID: 3230877995150797754, guid: e3b3bf775e696054c8c165f2b1c5665c, type: 3}
       propertyPath: m_LocalRotation.y
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 7788365406100514075, guid: f3f4aef98617329458a3d359497a8019, type: 3}
+    - target: {fileID: 3230877995150797754, guid: e3b3bf775e696054c8c165f2b1c5665c, type: 3}
       propertyPath: m_LocalRotation.z
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: 7788365406100514075, guid: f3f4aef98617329458a3d359497a8019, type: 3}
+    - target: {fileID: 3230877995150797754, guid: e3b3bf775e696054c8c165f2b1c5665c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7788365406100514075, guid: f3f4aef98617329458a3d359497a8019, type: 3}
+    - target: {fileID: 3230877995150797754, guid: e3b3bf775e696054c8c165f2b1c5665c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7788365406100514075, guid: f3f4aef98617329458a3d359497a8019, type: 3}
+    - target: {fileID: 3230877995150797754, guid: e3b3bf775e696054c8c165f2b1c5665c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3550501663887269265, guid: e3b3bf775e696054c8c165f2b1c5665c, type: 3}
+      propertyPath: m_Name
+      value: AStarHell
+      objectReference: {fileID: 0}
+    - target: {fileID: 7755737794029536870, guid: e3b3bf775e696054c8c165f2b1c5665c, type: 3}
+      propertyPath: scene
+      value: 
+      objectReference: {fileID: 2137454928}
+    - target: {fileID: 7755737794029536870, guid: e3b3bf775e696054c8c165f2b1c5665c, type: 3}
+      propertyPath: ModPaanels
+      value: 
+      objectReference: {fileID: 218645063}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: f3f4aef98617329458a3d359497a8019, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: e3b3bf775e696054c8c165f2b1c5665c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -2252,4 +2251,4 @@ SceneRoots:
   - {fileID: 867920930}
   - {fileID: 1448103660}
   - {fileID: 2056935223}
-  - {fileID: 61272505250693203}
+  - {fileID: 4509236247132761366}

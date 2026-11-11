@@ -22,6 +22,7 @@ public class Modifier : MonoBehaviour
     public SceneTransistion scene;
     public bool choice1Done = false;
     public bool choice2Done = false;
+    public AudioClip buttonsound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
 
     void Awake()
@@ -99,27 +100,39 @@ public class Modifier : MonoBehaviour
             if (currentMod.mod == "Speed")
             {
                 ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener(() => UpdateSpeedStack());
+                ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener((() => { GameObject.FindGameObjectWithTag("Inventory").GetComponent<AudioSource>().PlayOneShot(buttonsound); }));
                 ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener(() => scene.TransitionScene("SampleScene"));
             }
             else if (currentMod.mod == "Fall")
             {
                 ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener(() => UpdateFallStack());
+                ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener((() => { GameObject.FindGameObjectWithTag("Inventory").GetComponent<AudioSource>().PlayOneShot(buttonsound); }));
                 ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener(() => scene.TransitionScene("SampleScene"));
             }
             else if (currentMod.mod == "Range")
             {
                 ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener(() => UpdateRangeStack());
+                ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener((() => { GameObject.FindGameObjectWithTag("Inventory").GetComponent<AudioSource>().PlayOneShot(buttonsound); }));
                 ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener(() => scene.TransitionScene("SampleScene"));
             }
             else if (currentMod.mod == "Float")
             {
                 ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener(() => UpdateFlightStack());
+                ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener((() => { GameObject.FindGameObjectWithTag("Inventory").GetComponent<AudioSource>().PlayOneShot(buttonsound); }));
                 ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener(() => scene.TransitionScene("SampleScene"));
                 Debug.Log("added listeners");
             }
             else if (currentMod.mod == "Timer")
             {
                 ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener(() => UpdateTimerStack());
+                ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener((() => { GameObject.FindGameObjectWithTag("Inventory").GetComponent<AudioSource>().PlayOneShot(buttonsound); }));
+                ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener(() => scene.TransitionScene("SampleScene"));
+                Debug.Log("added listeners");
+            }
+            else if (currentMod.mod == "EnemySpeed")
+            {
+                ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener(() => UpdateEnemyStack());
+                ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener((() => { GameObject.FindGameObjectWithTag("Inventory").GetComponent<AudioSource>().PlayOneShot(buttonsound); }));
                 ModifuerManager.Instance.button1.GetComponent<Button>().onClick.AddListener(() => scene.TransitionScene("SampleScene"));
                 Debug.Log("added listeners");
             }
@@ -135,27 +148,39 @@ public class Modifier : MonoBehaviour
             if (currentMod.mod == "Speed")
             {
                 ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener(() => UpdateSpeedStack());
+                ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener((() => { GameObject.FindGameObjectWithTag("Inventory").GetComponent<AudioSource>().PlayOneShot(buttonsound); }));
                 ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener(() => scene.TransitionScene("SampleScene"));
             }
             else if (currentMod.mod == "Fall")
             {
                 ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener(() => UpdateFallStack());
+                ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener((() => { GameObject.FindGameObjectWithTag("Inventory").GetComponent<AudioSource>().PlayOneShot(buttonsound); }));
                 ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener(() => scene.TransitionScene("SampleScene"));
             }
             else if (currentMod.mod == "Float")
             {
                 ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener(() => UpdateFlightStack());
+                ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener((() => { GameObject.FindGameObjectWithTag("Inventory").GetComponent<AudioSource>().PlayOneShot(buttonsound); }));
                 ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener(() => scene.TransitionScene("SampleScene"));
                 Debug.Log("added listeners");
             }
             else if (currentMod.mod == "Range")
             {
                 ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener(() => UpdateRangeStack());
+                ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener((() => { GameObject.FindGameObjectWithTag("Inventory").GetComponent<AudioSource>().PlayOneShot(buttonsound); }));
                 ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener(() => scene.TransitionScene("SampleScene"));
             }
             else if (currentMod.mod == "Timer")
             {
                 ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener(() => UpdateTimerStack());
+                ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener((() => { GameObject.FindGameObjectWithTag("Inventory").GetComponent<AudioSource>().PlayOneShot(buttonsound); }));
+                ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener(() => scene.TransitionScene("SampleScene"));
+                Debug.Log("added listeners");
+            }
+            else if (currentMod.mod == "EnemySpeed")
+            {
+                ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener(() => UpdateEnemyStack());
+                ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener((() => { GameObject.FindGameObjectWithTag("Inventory").GetComponent<AudioSource>().PlayOneShot(buttonsound); }));
                 ModifuerManager.Instance.button2.GetComponent<Button>().onClick.AddListener(() => scene.TransitionScene("SampleScene"));
                 Debug.Log("added listeners");
             }
@@ -195,6 +220,10 @@ public class Modifier : MonoBehaviour
     public void UpdateTimerStack()
     {
         ModifuerManager.musicTimerStack++;
+    }
+    public void UpdateEnemyStack()
+    {
+        ModifuerManager.enemySpeedDown++;
     }
     
 
