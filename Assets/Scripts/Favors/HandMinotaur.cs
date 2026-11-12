@@ -19,17 +19,17 @@ public class HandMinotaur : MonoBehaviour
     {
         if (player.GetComponent<PlayerMovement>().movement.x > 0)
         {
-            sprearSpawn = new Vector3(player.transform.position.x - 15, player.transform.position.y - 4, player.transform.position.z);
+            sprearSpawn = new Vector3(player.transform.position.x - 15, player.transform.position.y - 18, player.transform.position.z);
             handRight = true;
         }
         else if (player.GetComponent<PlayerMovement>().movement.x < 0)
         {
-            sprearSpawn = new Vector3(player.transform.position.x + 15, player.transform.position.y - 4, player.transform.position.z);
+            sprearSpawn = new Vector3(player.transform.position.x + 15, player.transform.position.y - 18, player.transform.position.z);
             handRight = false;
         }
         else
         {
-            sprearSpawn = new Vector3(player.transform.position.x - 35, player.transform.position.y - 4, player.transform.position.z);
+            sprearSpawn = new Vector3(player.transform.position.x - 35, player.transform.position.y - 18, player.transform.position.z);
             handRight = true;
         }
     }

@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     public GameObject player;
     public AudioSource audioSource;
     public AudioClip wilhiem;
+    public static bool isDead;
     void Awake()
     {
         body = GetComponent<Rigidbody2D>();
@@ -69,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
             if (!inAnimatioon)
             {
                 inAnimatioon = true;
+                isDead = true;
                 audioSource.PlayOneShot(wilhiem);
                 TweenHelper.TakeDamage(transform);
                 StartCoroutine(CancelPlayer());

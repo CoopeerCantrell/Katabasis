@@ -2883,9 +2883,17 @@ PrefabInstance:
       value: Orpheus
       objectReference: {fileID: 0}
     - target: {fileID: 6779249461876948836, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: speed
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6779249461876948836, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
       propertyPath: wilhiem
       value: 
       objectReference: {fileID: 8300000, guid: c916226690c3c3c4daa192e2d66c08b5, type: 3}
+    - target: {fileID: 6779249461876948836, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
+      propertyPath: fallSpeed
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 8431024069224902684, guid: a894d94b8a7c4e84c892697196a763aa, type: 3}
       propertyPath: m_LocalPosition.x
       value: 14.619904

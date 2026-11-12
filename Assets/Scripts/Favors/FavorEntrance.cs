@@ -71,7 +71,7 @@ public class FavorEntrance : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Player")
+        if (collision.tag == "Player" && !PlayerMovement.isDead)
         {
             dialogue.SetDialogGraph(chosenHero);
             dialogInteraction.StartDiologue(gameObject.GetComponent<FavorEntrance>());

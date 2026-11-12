@@ -34,7 +34,7 @@ public class OrpheusMusic : MonoBehaviour
     void PlayMusic()
     {
 
-        hitColliders = Physics2D.OverlapCircleAll(transform.position, (radius + radiusModifier));
+        hitColliders = Physics2D.OverlapCircleAll(transform.position, radius + radiusModifier);
         foreach (var hitCollider in hitColliders)
         {
             if (hitCollider.CompareTag("Enemy"))

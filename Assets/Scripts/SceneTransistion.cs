@@ -33,8 +33,10 @@ public class SceneTransistion : MonoBehaviour
         ModifuerManager.musicRadiusStack = 0;
         ModifuerManager.speedStack = 0;
         ModifuerManager.musicTimerStack = 0;
+        ModifuerManager.enemySpeedDown = 0;
         ModifuerManager.storedItem = null;
         PlayerMovement.canContinueDeath = false;
+        PlayerMovement.isDead = false;
     }
 
     public void QuitGame()

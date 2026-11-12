@@ -6,6 +6,7 @@ public class PauseMenu : MonoBehaviour
     public static bool GameIsPaused = false;
 
     public GameObject pauseMenuUI;
+    public GameObject controlsUI;
 
     public string sceneName;
     
@@ -14,7 +15,7 @@ public class PauseMenu : MonoBehaviour
     void Update()
     {
      
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.Escape) || Input.GetKeyDown(KeyCode.Tab))
             {
              if (GameIsPaused)
                 {
@@ -62,10 +63,10 @@ public class PauseMenu : MonoBehaviour
     }
     public void credits()
     {
-        pauseMenuUI.SetActive(true);
+        controlsUI.SetActive(true);
     }
     public void exitCredits()
     {
-        pauseMenuUI.SetActive(false);
+        controlsUI.SetActive(false);
     }
 }
